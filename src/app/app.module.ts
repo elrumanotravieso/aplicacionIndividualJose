@@ -8,15 +8,29 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { Camera } from '@ionic-native/camera/ngx';
+import { FormBuilder, FormsModule } from '@angular/forms';
+import { environment } from 'src/environments/environment';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuthModule, AngularFireAuth } from '@angular/fire/auth';
+import firebaseConfig from './firebase';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFireStorage } from '@angular/fire/storage';
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+  // tslint:disable-next-line:max-line-length
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule, AngularFireModule.initializeApp(firebaseConfig)],
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    Camera,
+    FormsModule,
+    FormBuilder,
+    AngularFirestore,
+    AngularFireStorage,
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, AngularFireAuth
   ],
   bootstrap: [AppComponent]
 })

@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Registro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-item class="campos" style="margin-top: 30%;">
+          <ion-label position='floating'>Email:</ion-label>
+          <ion-input type="text" [(ngModel)]="credenciales.email"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item class="campos">
+          <ion-label position="floating">Contraseña:</ion-label>
+          <ion-input type="password" [(ngModel)]="credenciales.password"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item class="campos">
+          <ion-label position="floating">Confirmacion:</ion-label>
+          <ion-input type="password" [(ngModel)]="credenciales.confirmation"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-button expand="block" (click)="registro()" style="margin-top: 15%;">Alta</ion-button>
+</ion-content>

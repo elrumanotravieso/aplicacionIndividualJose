@@ -226,4 +226,8 @@
   ion-title.title-large {
     --color: white;
   }
+
+  ion-content.background{
+    --background: url(../assets/images/fondo/fondo.jpg) 0 0/100% 100% no-repeat;
+}
 }
