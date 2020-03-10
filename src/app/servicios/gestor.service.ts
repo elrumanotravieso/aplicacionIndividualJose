@@ -64,7 +64,7 @@ export class GestorService {
     return this.credenciales;
   }
 
-  public set establecerCredenciales(credenciales) {
+  establecerCredenciales(credenciales) {
     this.credenciales = credenciales;
   }
 
